@@ -1,34 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, CardDeck, Container } from 'react-bootstrap';
 import ServicesCard from './ServicesCard';
-import weddingImg from '../../../images/wedding.jpg'
-import birthdayImg from '../../../images/birthday.jpg'
-import partyImg from '../../../images/party.jpg'
+
+
 const Services = () => {
     
-    const services = [
-        {
-            name: "Wedding Event",
-            imageUrl: weddingImg,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias adipisci alias exercitationem, optio eos"
-        },
-        {
-            name: "Birthday",
-            imageUrl: birthdayImg,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias adipisci alias exercitationem, optio eos"
-        },
-        {
-            name: "Official Party",
-            imageUrl: partyImg,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias adipisci alias exercitationem, optio eos"
-        }
-    ];
+    
 
-    // const call = () => {
-    //     services.map(service => console.log(service.imageUrl))
-    // }
-    // call();
+    const [events, setEvents] = useState([]);
 
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((res) => res.json())
+      .then((data) => {
+        setEvents(data);
+        // console.log(data);
+      });
+  }, []);
 
     return (
         <Container className="pt-5 mt-5 text-center">
@@ -36,13 +24,13 @@ const Services = () => {
             <div>
                 <CardDeck>
                     {
-                        services.map(service => <ServicesCard service={service}></ServicesCard>)
+                        events?.map(service => <ServicesCard service={service} key={service._id}></ServicesCard>)
                     }
                 </CardDeck>
             </div>
-            <div className="pb-5 my-5 d-flex justify-content-center">
+            {/* <div className="pb-5 my-5 d-flex justify-content-center">
                 <Button variant="outline-primary">Primary</Button>
-            </div>
+            </div> */}
         </Container>
     );
 };

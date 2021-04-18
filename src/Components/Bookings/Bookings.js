@@ -79,16 +79,16 @@ const Bookings = () => {
         >
           <Tab label="Book" {...a11yProps(0)} />
           <Tab label="Booking list" {...a11yProps(1)} />
-          <Tab label="Review" {...a11yProps(2)} />
+          {/* <Tab label="Review" {...a11yProps(2)} /> */}
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      {/* <TabPanel value={value} index={0}>
         <Book></Book>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
+      </TabPanel> */}
+      <TabPanel value={value} index={0}>
         <BookingList></BookingList>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={1}>
         <Review></Review>
       </TabPanel>
     </div>

@@ -7,7 +7,7 @@ const About = () => {
     <Container className="my-5 py-5">
       <Row>
         <Col sm={6}>
-          <Image src={aboutImg} rounded />
+          <Image src={aboutImg} rounded fluid/>
         </Col>
         <Col sm={6}  className="d-flex align-items-center">
           <Jumbotron>

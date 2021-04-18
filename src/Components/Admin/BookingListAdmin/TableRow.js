@@ -1,14 +1,14 @@
 import React from 'react';
 
 const TableRow = (props) => {
-    const {name,email,paymentMethod,status,ServiceName,} = props.info;
+    const {orderTitle, orderDescription, orderDate, name,phone,email,card} = props.info;
     return (
         <tr>
             <td>{name}</td>
             <td>{email}</td>
-            <td>{ServiceName}</td>
-            <td>{paymentMethod}</td>
-            <td>{status}</td>
+            <td>{orderTitle}</td>
+            <td>{card.brand}</td>
+            <td>payment done</td>
         </tr>
     );
 };

@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CardDeck } from 'react-bootstrap';
+import { UserContext } from '../../../App';
 import BookingListCard from './BookingListCard';
 
 const BookingList = () => {
 
-    const bookingList = [
-        {
-            name:"wedding",
-            time: 123,
-            description: "Some quick example text to build on the card title and make up the bulk of the cards content."
-        },
-        {
-            name:"wedding",
-            time: 123,
-            description: "Some quick example text to build on the card title and make up the bulk of the cards content."
-        }
-    ];
+    
+    const [orderList, setOrderList] = useState([]);
+
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/userOrders?email=" + loggedInUser.userEmail)
+      .then((res) => res.json())
+      .then((data) => {
+        setOrderList(data);
+        // console.log(data);
+      });
+  }, []);
 
     return (
         <div>
             <CardDeck>
                 {
-                    bookingList.map(order => <BookingListCard order={order}></BookingListCard> )
+                    orderList?.map(orderList => <BookingListCard  orderList={orderList}></BookingListCard> )
                 }
             </CardDeck>
         </div>

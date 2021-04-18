@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,11 +11,12 @@ import BookingListAdmin from './BookingListAdmin/BookingListAdmin';
 import AddService from './AddService/AddService';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManageServices from './ManageServices/ManageServices';
+import { UserContext } from '../../App';
 
 
 const Admin = () => {
 
-
+const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -64,30 +65,32 @@ const classes = useStyles();
     setValue(newValue);
   };
 
+  console.log(loggedInUser.adminStatus);
+
     return (
         <Container>
             <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Booking List" {...a11yProps(0)} />
-          <Tab label="Add Services" {...a11yProps(1)} />
-          <Tab label="Make Admin" {...a11yProps(2)} />
-          <Tab label="Manage Services" {...a11yProps(3)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        <BookingListAdmin></BookingListAdmin>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <AddService></AddService>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <MakeAdmin></MakeAdmin>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <ManageServices></ManageServices>
-      </TabPanel>
-    </div>
+              <AppBar position="static">
+                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+                  <Tab label="Booking List" {...a11yProps(0)} />
+                  <Tab label="Add Services" {...a11yProps(1)} />
+                  <Tab label="Make Admin" {...a11yProps(2)} />
+                  <Tab label="Manage Services" {...a11yProps(3)} />
+                </Tabs>
+              </AppBar>
+              <TabPanel value={value} index={0}>
+                <BookingListAdmin></BookingListAdmin>
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                <AddService></AddService>
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+                <MakeAdmin></MakeAdmin>
+              </TabPanel>
+              <TabPanel value={value} index={3}>
+                <ManageServices></ManageServices>
+              </TabPanel>
+          </div>
         </Container>
     );
 };

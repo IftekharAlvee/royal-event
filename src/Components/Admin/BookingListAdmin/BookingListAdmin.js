@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { UserContext } from '../../../App';
 import TableRow from './TableRow';
 
 const BookingListAdmin = () => {
@@ -54,6 +55,19 @@ const BookingListAdmin = () => {
         }
     ];
 
+    const [orderList, setOrderList] = useState([]);
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/orders")
+        .then((res) => res.json())
+        .then((data) => {
+            setOrderList(data);
+            // console.log(data);
+        });
+    }, []);
+
     return (
         <div>
             <Table striped bordered hover >
@@ -68,7 +82,7 @@ const BookingListAdmin = () => {
                 </thead>
                 <tbody>
                     {
-                        services.map(info => <TableRow info={info}></TableRow>)
+                        orderList.map(info => <TableRow info={info}></TableRow>)
                     }
                 </tbody>
             </Table>

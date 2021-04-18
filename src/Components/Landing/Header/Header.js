@@ -19,7 +19,7 @@ const Header = () => {
           </Jumbotron>
         </Col>
         <Col sm={6} className="d-flex justify-content-center">
-          <Image src={heroImage} rounded />
+          <Image src={heroImage} rounded fluid />
         </Col>
       </Row>
     </Container>
