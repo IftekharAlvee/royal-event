@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     }
     const handleSubmit = () => {
         console.log(admin);
-        const url = "http://localhost:5000/addAdmin";
+        const url = "https://stark-mesa-31837.herokuapp.com/addAdmin";
       fetch(url,{
           method: "POST",
           headers: {

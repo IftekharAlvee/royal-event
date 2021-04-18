@@ -12,7 +12,7 @@ const BookingHolder = () => {
         const orderData= {
           ...orderInfo
         };
-        const url = "http://localhost:5000/addOrder";
+        const url = "https://stark-mesa-31837.herokuapp.com/addOrder";
             fetch(url,{
                 method: "POST",
                 headers: {

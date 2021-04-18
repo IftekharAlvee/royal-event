@@ -60,7 +60,7 @@ const BookingListAdmin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch("http://localhost:5000/orders")
+        fetch("https://stark-mesa-31837.herokuapp.com/orders")
         .then((res) => res.json())
         .then((data) => {
             setOrderList(data);

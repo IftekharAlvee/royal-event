@@ -6,11 +6,11 @@ import FooterCol from './FooterCol';
 
 const Footer = () => {
     const noNamed = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
+        {name: "Eoyal Event Management" , link: "/emergency"},
+        {name: "Royal Event" , link: "/checkup"},
+        {name: "Wedding Event" , link: "/personal-treatment"},
         {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
+        {name: "Royal Event" , link: "/checkup"},
     ]
     const ourAddress = [
         {name: "New York - 101010 Hudson" , link: "//google.com/map"},
@@ -18,22 +18,22 @@ const Footer = () => {
        
     ]
     const oralHealth = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
+        {name: "Eoyal Event Management" , link: "/emergency"},
+        {name: "Royal Event" , link: "/checkup"},
+        {name: "Wedding Event" , link: "/personal-treatment"},
         {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"}
+        {name: "Royal Event" , link: "/checkup"},
+        {name: "Royal Event" , link: "/checkup"},
+        {name: "Royal Event" , link: "/checkup"}
     ]
     const services = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
+        {name: "Eoyal Event Management" , link: "/emergency"},
+        {name: "Royal Event" , link: "/checkup"},
+        {name: "Wedding Event" , link: "/personal-treatment"},
         {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"}
+        {name: "Royal Event" , link: "/checkup"},
+        {name: "Royal Event" , link: "/checkup"},
+        {name: "Royal Event" , link: "/checkup"}
     ]
     return (
         <footer className="footer-area clear-both ">
@@ -55,7 +55,7 @@ const Footer = () => {
                     </FooterCol>
                 </div>
                 <div className="copyRight text-center">
-                    <p className="text-secondary">Copyright {(new Date()).getFullYear()} All Rights Reserved</p>
+                    <p className="text-secondary">Copyright {(new Date()).getFullYear()} All Rights Reserved by Alvee</p>
                 </div>
             </div>
         </footer>

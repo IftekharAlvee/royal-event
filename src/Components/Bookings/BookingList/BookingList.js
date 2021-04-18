@@ -11,7 +11,7 @@ const BookingList = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/userOrders?email=" + loggedInUser.userEmail)
+    fetch("https://stark-mesa-31837.herokuapp.com/userOrders?email=" + loggedInUser.userEmail)
       .then((res) => res.json())
       .then((data) => {
         setOrderList(data);

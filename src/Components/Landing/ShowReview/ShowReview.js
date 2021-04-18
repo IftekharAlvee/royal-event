@@ -24,7 +24,7 @@ const ShowReview = () => {
     const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://stark-mesa-31837.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);

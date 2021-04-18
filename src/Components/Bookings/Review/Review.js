@@ -31,7 +31,7 @@ const Review = () => {
         // setReviewPush(reviewData);
         console.log(reviewData);
 
-        const url = "http://localhost:5000/addReview";
+        const url = "https://stark-mesa-31837.herokuapp.com/addReview";
       fetch(url,{
           method: "POST",
           headers: {

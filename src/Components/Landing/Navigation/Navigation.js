@@ -9,7 +9,7 @@ const Navigation = () => {
   const [adminStatus,setAdminStatus] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/isAdmin?email=" + loggedInUser.userEmail)
+    fetch("https://stark-mesa-31837.herokuapp.com/isAdmin?email=" + loggedInUser.userEmail)
       .then((res) => res.json())
       .then((data) => {
         setIsAdmin(data);

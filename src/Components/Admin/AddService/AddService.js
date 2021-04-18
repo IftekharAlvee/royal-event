@@ -34,7 +34,7 @@ const handleSubmit = () => {
                   description: description
               };
     console.log(eventData);
-    const url = "http://localhost:5000/addServices";
+    const url = "https://stark-mesa-31837.herokuapp.com/addServices";
       fetch(url,{
           method: "POST",
           headers: {
@@ -58,7 +58,7 @@ const handleSubmit = () => {
 //           imageURL: imageURL,
 //           price: data.price
 //       }
-//       const url = "http://localhost:5000/addServices";
+//       const url = "https://stark-mesa-31837.herokuapp.com/addServices";
 //       fetch(url,{
 //           method: "POST",
 //           headers: {
